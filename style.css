@@ -1,173 +1,103 @@
-/* Body and general layout */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f7fa;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-/* Main container */
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 80%;
-    max-width: 1200px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin-top: 40px;
-}
-
-/* Resources Section */
-.resources-section {
-    width: 45%;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.resources-section h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.resources-section select,
-.resources-section button {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    font-size: 16px;
-    background-color: #007bff;
+    font-family: Arial, sans-serif;
+    background: url('https://img.freepik.com/free-vector/empty-classroom-interior-with-chalkboard_1308-65378.jpg?semt=ais_hybrid') no-repeat center center fixed;
+    background-size: cover;
     color: #fff;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    margin-top: 100px;
+}
+select, button {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
     border: none;
     border-radius: 5px;
+}
+select {
+    background-color: #ddd;
+    color: #000;
+}
+button {
+    background-color: #007BFF;
+    color: #fff;
     cursor: pointer;
 }
-
-.resources-section button:hover {
+button:hover {
     background-color: #0056b3;
 }
-
-.resources-section .links a {
+.links a {
     display: block;
-    margin: 10px 0;
-    color: #007bff;
+    margin: 5px 0;
+    color: #1E90FF;
     text-decoration: none;
 }
-
-.resources-section .links a:hover {
+.links a:hover {
     text-decoration: underline;
 }
 
-/* Forum Section */
-.forum-section {
-    width: 45%;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+/* Forum styling */
+.forum {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
-.forum-section h2 {
-    font-size: 22px;
+.forum h2 {
+    font-size: 18px;
+    margin: 10px 0 10px;
+}
+.forum textarea {
+    width: 100%;
+    padding: 10px;
     margin-bottom: 10px;
-}
-
-.forum-section textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    font-size: 16px;
     border-radius: 5px;
-    border: 1px solid #ccc;
-    resize: none;
-}
-
-.forum-section button {
-    width: 100%;
-    padding: 12px;
-    background-color: #28a745;
-    color: #fff;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    resize: none;
+    font-size: 14px;
 }
-
-.forum-section button:hover {
-    background-color: #218838;
-}
-
 .messages {
-    margin-top: 15px;
-    background-color: #f1f1f1;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 10px;
     border-radius: 5px;
     max-height: 200px;
     overflow-y: auto;
-}
-
-.messages p {
-    margin-bottom: 10px;
-    padding: 8px;
-    background-color: #e2e6ea;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.messages p button {
-    background-color: #ff4c4c;
-    color: white;
-    border: none;
-    padding: 5px 10px;
     font-size: 14px;
-    cursor: pointer;
 }
-
-.messages p button:hover {
-    background-color: #e02e2e;
+.messages p {
+    margin: 5px 0;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
 }
-
-/* Telegram Link Style */
 .telegram-link {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
-
 .telegram-link img {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     margin-right: 10px;
 }
-
 .telegram-link a {
-    font-size: 16px;
-    color: #007bff;
+    color: #1E90FF;
     text-decoration: none;
+    font-size: 14px;
 }
-
 .telegram-link a:hover {
     text-decoration: underline;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        width: 90%;
-    }
-
-    .resources-section,
-    .forum-section {
-        width: 100%;
-        margin-bottom: 20px;
-    }
 }
