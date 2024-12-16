@@ -15,14 +15,14 @@
             <a href="https://t.me/+5TfqVcQpCnVlY2Nl" target="_blank">Join our Telegram Channel</a>
         </div>
 
-        <h2>Forum: Post Your Queries!</h2>
-        <textarea id="queryInput" rows="4" placeholder="Enter your query here..." required></textarea>
-        <button onclick="submitQuery()">Submit</button>
-        
-        <!-- Messages Box -->
-        <div class="messages" id="messageBox">
-            <!-- Past messages will appear here -->
-        </div>
+       <label for="queryInput">Post Your Query:</label>
+<textarea id="queryInput" rows="4" placeholder="Enter your query here..." required aria-label="Enter your query"></textarea>
+<button onclick="submitQuery()" aria-label="Submit your query">Submit</button>
+
+<!-- Messages Box with ARIA Live -->
+<div class="messages" id="messageBox" aria-live="polite" aria-label="Message updates">
+    <!-- Past messages will appear here -->
+</div>
     </div>
 
     <div class="container">
