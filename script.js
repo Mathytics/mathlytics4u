@@ -66,8 +66,14 @@ function showLinks() {
 }
 
 // LocalStorage for forum messages
+function getStorageKey() {
+    // Prefix localStorage key with the website origin or unique identifier
+    return `messages_${window.location.hostname}`;
+}
+
 function loadMessages() {
-    const messages = JSON.parse(localStorage.getItem("messages")) || [];
+    const storageKey = getStorageKey();
+    const messages = JSON.parse(localStorage.getItem(storageKey)) || [];
     const messageBox = document.getElementById("messageBox");
     messageBox.innerHTML = "";
     messages.forEach(msg => {
@@ -78,11 +84,12 @@ function loadMessages() {
 }
 
 function submitQuery() {
+    const storageKey = getStorageKey();
     const queryInput = document.getElementById("queryInput").value;
     if (queryInput.trim() !== "") {
-        const messages = JSON.parse(localStorage.getItem("messages")) || [];
+        const messages = JSON.parse(localStorage.getItem(storageKey)) || [];
         messages.push(queryInput);
-        localStorage.setItem("messages", JSON.stringify(messages));
+        localStorage.setItem(storageKey, JSON.stringify(messages));
         loadMessages();
         document.getElementById("queryInput").value = "";
     } else {
