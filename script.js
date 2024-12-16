@@ -13,6 +13,11 @@ const topics = {
     ]
 };
 
+// Load queries from localStorage when the page loads
+window.onload = function () {
+    loadQueries();
+};
+
 // Update topics based on selected form
 function updateTopics() {
     const form = document.getElementById("form").value;
@@ -66,11 +71,36 @@ function submitQuery() {
     const messageBox = document.getElementById("messageBox");
 
     if (queryInput) {
+        // Add new query to the message box
         const newMessage = document.createElement("div");
         newMessage.textContent = queryInput;
         messageBox.appendChild(newMessage);
-        document.getElementById("queryInput").value = ""; // Clear input
+
+        // Save the query to localStorage
+        saveQuery(queryInput);
+
+        // Clear input field
+        document.getElementById("queryInput").value = "";
     } else {
         alert("Please enter a query before submitting.");
     }
+}
+
+// Save query to localStorage
+function saveQuery(query) {
+    let queries = JSON.parse(localStorage.getItem("queries")) || [];
+    queries.push(query);
+    localStorage.setItem("queries", JSON.stringify(queries));
+}
+
+// Load queries from localStorage
+function loadQueries() {
+    const queries = JSON.parse(localStorage.getItem("queries")) || [];
+    const messageBox = document.getElementById("messageBox");
+
+    queries.forEach(query => {
+        const message = document.createElement("div");
+        message.textContent = query;
+        messageBox.appendChild(message);
+    });
 }
