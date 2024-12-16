@@ -3,41 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teaching Resources Selector</title>
+    <title>Teaching Resources & Forum</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Forum Box -->
-    <div class="forum">
-        <div class="telegram-link">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png" alt="Telegram Icon">
-            <a href="https://t.me/+5TfqVcQpCnVlY2Nl" target="_blank">Join our Telegram Channel</a>
+    <div class="container">
+        <div class="resources-section">
+            <h1>Teaching Resources Selector</h1>
+            
+            <div class="form-selection">
+                <label for="form">Select Form:</label>
+                <select id="form" onchange="updateTopics()">
+                    <option value="">-- Select Form --</option>
+                    <option value="form2">Form 2</option>
+                    <option value="form4">Form 4</option>
+                </select>
+            </div>
+
+            <div class="topic-selection">
+                <label for="topic">Select Topic:</label>
+                <select id="topic">
+                    <option value="">-- Select Topic --</option>
+                </select>
+            </div>
+
+            <button onclick="showLinks()">View Resources</button>
+
+            <div class="links" id="links"></div>
         </div>
 
-        <h2>Forum: Post Your Queries!</h2>
-        <textarea id="queryInput" rows="4" placeholder="Enter your query here..." required></textarea>
-        <button onclick="submitQuery()">Submit</button>
-        
-        <div class="messages" id="messageBox"></div>
-    </div>
+        <!-- Forum Section -->
+        <div class="forum-section">
+            <h2>Forum: Post Your Queries</h2>
+            
+            <div class="telegram-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png" alt="Telegram Icon">
+                <a href="https://t.me/+5TfqVcQpCnVlY2Nl" target="_blank">Join our Telegram Channel</a>
+            </div>
 
-    <div class="container">
-        <h1>Teaching Resources Selector</h1>
-        <label for="form">Select Form:</label>
-        <select id="form" onchange="updateTopics()">
-            <option value="">-- Select Form --</option>
-            <option value="form2">Form 2</option>
-            <option value="form4">Form 4</option>
-        </select>
+            <textarea id="queryInput" placeholder="Enter your query here..." rows="4"></textarea>
+            <button onclick="submitQuery()">Submit</button>
 
-        <label for="topic">Select Topic:</label>
-        <select id="topic">
-            <option value="">-- Select Topic --</option>
-        </select>
-
-        <button onclick="showLinks()">View Resources</button>
-
-        <div class="links" id="links"></div>
+            <div class="messages" id="messageBox"></div>
+        </div>
     </div>
 
     <script src="script.js"></script>
