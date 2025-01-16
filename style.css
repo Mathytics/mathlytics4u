@@ -6,21 +6,6 @@ body {
     background-size: cover;
     color: #fff;
 }
-.footer {
-    position: fixed; /* Stick to the bottom */
-    bottom: 0;       /* Align to the bottom */
-    left: 0;         /* Start from the left edge */
-    width: 100%;     /* Full width of the screen */
-    text-align: center; /* Center the content */
-    background-color: rgba(255, 255, 255, 0.9); /* Light background */
-    color: #000000; /* Black text */
-    padding: 10px 0; /* Add vertical padding */
-    font-family: Arial, sans-serif; /* Font styling */
-    font-size: 16px; /* Font size */
-    z-index: 1000; /* Ensure it stays above other content */
-}
-
-
 .container {
     max-width: 600px;
     margin: auto;
@@ -49,15 +34,11 @@ button {
 button:hover {
     background-color: #0056b3;
 }
-.links a {
-    display: block;
-    margin: 5px 0;
-    color: #1E90FF;
-    text-decoration: none;
-}
-.links a:hover {
-    text-decoration: underline;
-}
+#links {
+        margin-top: 20px;
+    }
+/* link styling */
+
 
 /* Forum styling */
 .forum {
@@ -115,6 +96,20 @@ button:hover {
 }
 .telegram-link a:hover {
     text-decoration: underline;
+}
+
+.footer {
+    position: fixed; /* Stick to the bottom */
+    bottom: 0;       /* Align to the bottom */
+    left: 0;         /* Start from the left edge */
+    width: 100%;     /* Full width of the screen */
+    text-align: center; /* Center the content */
+    background-color: rgba(255, 255, 255, 0.9); /* Light background */
+    color: #000000; /* Black text */
+    padding: 10px 0; /* Add vertical padding */
+    font-family: Arial, sans-serif; /* Font styling */
+    font-size: 16px; /* Font size */
+    z-index: 1000; /* Ensure it stays above other content */
 }
 
 
